@@ -1,3 +1,5 @@
+# https://codereview.stackexchange.com/questions/116044/one-time-pad-algorithm-for-encryption-and-decryption
+
 from random import choice
 import string
 
@@ -35,7 +37,7 @@ if __name__ == "__main__":
     for i in range(100):
         for i in range(100):
             ls.append(choice(string.ascii_letters))
-
+        print(ls)
         s = "".join(ls)
 
         bits = convert_to_bits(s)

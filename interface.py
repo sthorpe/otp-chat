@@ -13,6 +13,7 @@ from __future__ import division, print_function
 import collections
 import functools
 
+import otp
 from blessed import Terminal
 
 # python 2/3 compatibility, provide 'echo' function as an
@@ -55,7 +56,7 @@ def echo_yx(cursor, text):
     print(cursor.term.move(0, 0) + '╔═════════════════════════════════════════════╗')
     print(cursor.term.move(1, 0) + '║              OTP - Scott & Zach             ║')
     print(cursor.term.move(2, 0) + '╚═════════════════════════════════════════════╝')
-    echo(cursor.term.move(5 + cursor.y, cursor.x) + text)
+    echo(cursor.term.move(5 + cursor.y, cursor.x) + otp.convert_to_bits(text))
 
 
 Cursor = collections.namedtuple('Cursor', ('y', 'x', 'term'))
