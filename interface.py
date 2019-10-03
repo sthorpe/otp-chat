@@ -52,11 +52,11 @@ def input_filter(keystroke):
 
 def echo_yx(cursor, text):
     """Move to ``cursor`` and display ``text``."""
-    print("{t.green_on_black}".format(t=cursor.term))
-    print(cursor.term.move(0, 0) + '╔═════════════════════════════════════════════╗')
-    print(cursor.term.move(1, 0) + '║              OTP - Scott & Zach             ║')
-    print(cursor.term.move(2, 0) + '╚═════════════════════════════════════════════╝')
-    echo(cursor.term.move(5 + cursor.y, cursor.x) + otp.convert_to_bits(text))
+    echo("{t.green_on_black}".format(t=cursor.term))
+    echo(cursor.term.move(0, 0) + '╔═════════════════════════════════════════════╗')
+    echo(cursor.term.move(1, 0) + '║              OTP - Scott & Zach             ║')
+    echo(cursor.term.move(2, 0) + '╚═════════════════════════════════════════════╝')
+    echo(cursor.term.move(5 + cursor.y, cursor.x) + text + '  ' + otp.convert_to_bits(text))
 
 
 Cursor = collections.namedtuple('Cursor', ('y', 'x', 'term'))
